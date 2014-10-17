@@ -1,16 +1,24 @@
 'use strict';
 
-describe('myApp.view1 module', function() {
+describe ('myApp.view1 module', function () {
 
-  beforeEach(module('myApp.view1'));
+    var scope;
+    beforeEach (module ('myApp.view1'));
 
-  describe('view1 controller', function(){
-
-    it('should ....', inject(function($controller) {
-      //spec body
-      var view1Ctrl = $controller('View1Ctrl');
-      expect(view1Ctrl).toBeDefined();
+    beforeEach (inject (function ($controller, $rootScope) {  // inject $rootScope
+        scope = $rootScope.$new();
+        $controller ("View1Ctrl", {$scope: scope});
     }));
 
-  });
+    describe ('view1 controller', function () {
+
+        it ('should reduce the budget by the given amount', function () {
+            scope.budget = 1000;
+            scope.amount = 10;
+            scope.addTransaction();
+            expect(scope.budget).toEqual(990);
+            expect(scope.amount).toBeNull();
+        });
+
+    });
 });

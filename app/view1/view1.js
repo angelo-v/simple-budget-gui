@@ -9,6 +9,12 @@ angular.module('myApp.view1', ['ngRoute'])
   });
 }])
 
-.controller('View1Ctrl', [function() {
-
+.controller('View1Ctrl', ['$scope', function($scope) {
+    $scope.budget = 800;
+    $scope.addTransaction = function () {
+        if ($scope.amount) {
+            $scope.budget -= $scope.amount;
+            $scope.amount = null;
+        }
+    };
 }]);
