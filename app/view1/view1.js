@@ -11,7 +11,10 @@ angular.module('myApp.view1', ['ngRoute'])
 
 .controller('View1Ctrl', ['$scope', function($scope) {
     $scope.budget = 800;
-    $scope.transactions = [];
+    $scope.transactions = [
+        {amount: -23.97, description: 'Einkauf', date: new Date()},
+        {amount: -10, date: new Date()},
+    ];
     $scope.addTransaction = function () {
         if ($scope.amount) {
             $scope.budget -= $scope.amount;
