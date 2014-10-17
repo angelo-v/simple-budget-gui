@@ -1,9 +1,9 @@
 'use strict';
 
-angular.module('myApp.view1', ['ngRoute'])
+angular.module('myApp.budget', ['ngRoute'])
 
 .config(['$routeProvider', function($routeProvider) {
-  $routeProvider.when('/view1', {
+  $routeProvider.when('/budget', {
     templateUrl: 'view1/budget.html',
     controller: 'BudgetCtrl'
   });

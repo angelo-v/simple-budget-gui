@@ -1,9 +1,9 @@
 'use strict';
 
-describe ('myApp.view1 module', function () {
+describe ('myApp.budget module', function () {
 
     var scope;
-    beforeEach (module ('myApp.view1'));
+    beforeEach (module ('myApp.budget'));
 
     beforeEach (inject (function ($controller, $rootScope) {  // inject $rootScope
         scope = $rootScope.$new();
