@@ -7,10 +7,10 @@ describe ('myApp.view1 module', function () {
 
     beforeEach (inject (function ($controller, $rootScope) {  // inject $rootScope
         scope = $rootScope.$new();
-        $controller ("View1Ctrl", {$scope: scope});
+        $controller ("BudgetCtrl", {$scope: scope});
     }));
 
-    describe ('view1 controller', function () {
+    describe ('budget controller', function () {
 
         it ('should reduce the budget by the given amount', function () {
             scope.budget = 1000;

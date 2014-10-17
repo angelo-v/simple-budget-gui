@@ -5,11 +5,11 @@ angular.module('myApp.view1', ['ngRoute'])
 .config(['$routeProvider', function($routeProvider) {
   $routeProvider.when('/view1', {
     templateUrl: 'view1/view1.html',
-    controller: 'View1Ctrl'
+    controller: 'BudgetCtrl'
   });
 }])
 
-.controller('View1Ctrl', ['$scope', function($scope) {
+.controller('BudgetCtrl', ['$scope', function($scope) {
     $scope.budget = 800;
     $scope.transactions = [
         {amount: -23.97, description: 'Einkauf', date: new Date()},
