@@ -14,6 +14,7 @@ describe ('myApp.view1 module', function () {
 
         it ('should reduce the budget by the given amount', function () {
             scope.budget = 1000;
+            scope.transactions = [];
             scope.amount = 10;
             scope.description = 'test transaction';
             scope.addTransaction();
