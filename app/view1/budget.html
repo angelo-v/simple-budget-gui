@@ -12,7 +12,8 @@
 
 
             <div class="input-group-btn ">
-                <button type="button" class="btn btn-default" data-ng-click="addTransaction();"><span class="glyphicon glyphicon glyphicon-minus"></span>
+                <button type="button" class="btn btn-default" data-ng-click="addTransaction();"><span
+                        class="glyphicon glyphicon glyphicon-minus"></span>
                 </button>
                 <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
                     <span class="caret"></span>
@@ -25,7 +26,8 @@
             </div>
 
         </div>
-        <input type="text" name="description" data-ng-model="description" class="form-control input-lg" placeholder="Beschreibung">
+        <input type="text" name="description" data-ng-model="description" class="form-control input-lg"
+               placeholder="Beschreibung">
     </div>
 
 
@@ -39,7 +41,7 @@
         </thead>
         <tbody>
         <tr data-ng-repeat="transaction in transactions">
-            <td>{{ transaction.amount }} €</td>
+            <td>{{ transaction.amount | number:2}} €</td>
             <td>{{ transaction.date | date:'dd.MM.yyyy HH:mm'}}</td>
             <td>{{ transaction.description }}</td>
         </tr>
