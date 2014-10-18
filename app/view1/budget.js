@@ -9,12 +9,13 @@ angular.module('myApp.budget', ['ngRoute'])
   });
 }])
 
-.controller('BudgetCtrl', ['$scope', function($scope) {
+.controller('BudgetCtrl', ['$scope', '$http', function($scope, $http) {
     $scope.budget = 800;
-    $scope.transactions = [
-        {amount: -23.97, description: 'Einkauf', date: new Date()},
-        {amount: -10, date: new Date()},
-    ];
+
+    $http.get('data/transactions.json').success(function(data) {
+        $scope.transactions = data;
+    });
+
     $scope.addTransaction = function () {
         if ($scope.amount) {
             $scope.budget -= $scope.amount;
